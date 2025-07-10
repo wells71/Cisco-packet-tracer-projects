@@ -4,13 +4,13 @@
 - At the heart of the technological infrastructure lies the main campus, which hosts a server farm, often referred to as the Demilitarized Zone (DMZ). Within this fortified zone, essential servers such as DHCP, DNS, FTP, WEB, Email, and SMTP are strategically housed. Recognizing the importance of secure resource access, users at the branch campus are equipped with the capability to securely connect to and utilize these centralized servers. This safeguarded connectivity ensures that educational, informational, and communication resources are readily available to all users, irrespective of their physical location.
 
 - As an integral part of the University's ICT infrastructure, the following components have been incorporated:
-    1. Internet Services Provider (ISP): The University has established a subscription with Airtel to ensure internet connectivity.
-    2. Network Security: Two Cisco ASA Firewalls from the 5500-X series have been acquired to enhance network security. Each campus will have its firewall but the main campus will contain the DMZ or the server farm.
-    3. Network Routing: Both the firewalls and the core switches will be used instead of a router.
-    4. Switching Infrastructure: The network includes two Catalyst 3850 48-Port Switches for each campus, and Catalyst 2960 48-Port Switches per faculty to ensure robust local network connectivity. 
-    5. Server Hardware and Virtualization: Two physical servers will be utilized for virtualization through the hypervisor to achieve multiple virtual machines for various services. For redundancy or failover, we will have two DHCP servers running at the same time.
-    6. Wireless Infrastructure: A Cisco Wireless LAN Controller (WLC) and Lightweight Access Points (LAPs) will centralize the management of the wireless network. The WLC will be placed at the main campus and will be managing all the APS in the network.
-    7. Site-to-site IPsec VPN: Configure IPsec VPN on the two firewalls to enable secure communication between the main and the branch campus.
+    1. **Internet Services Provider (ISP)**: The University has established a subscription with Airtel to ensure internet connectivity.
+    2. **Network Security**: Two Cisco ASA Firewalls from the 5500-X series have been acquired to enhance network security. Each campus will have its firewall but the main campus will contain the DMZ or the server farm.
+    3. **Network Routing**: Both the firewalls and the core switches will be used instead of a router.
+    4. **Switching Infrastructure**: The network includes two Catalyst 3850 48-Port Switches for each campus, and Catalyst 2960 48-Port Switches per faculty to ensure robust local network connectivity. 
+    5. **Server Hardware and Virtualization**: Two physical servers will be utilized for virtualization through the hypervisor to achieve multiple virtual machines for various services. For redundancy or failover, we will have two DHCP servers running at the same time.
+    6. **Wireless Infrastructure**: A Cisco Wireless LAN Controller (WLC) and Lightweight Access Points (LAPs) will centralize the management of the wireless network. The WLC will be placed at the main campus and will be managing all the APS in the network.
+    7. **Site-to-site IPsec VPN**: Configure IPsec VPN on the two firewalls to enable secure communication between the main and the branch campus.
 
 - Cloud computing as an important technology is used to connect clients across the world to University services and resources thus the University system is linked to the Google Cloud platform to facilitate service delivery thus this is one of the core business functions of the firm. The proposed network should allow the team access to these resources.
 

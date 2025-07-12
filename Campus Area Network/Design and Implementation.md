@@ -21,9 +21,9 @@
 ## Requirements
 - The University places a strong emphasis on achieving top-tier performance, redundancy, scalability, and availability within its network infrastructure. As such, your task involves creating a comprehensive network design and executing its implementation. To facilitate this endeavor, the University has designated specific IP address ranges:
 
-    - **Management Network**: For the management, the IP address range of 172.16.10.0/24 has been allocated.
-    - **WLAN**: The WLAN network will operate within the IP address range of 10.10.0.0/16.
-    - **LAN**: For the local area network (LAN), the IP address range of 192.168.0.0/16 has been allocated.
+    - **Management Network**: For the management, the IP address range of 192.168.10.0/24 has been allocated.
+    - **WLAN**: The WLAN network will operate within the IP address range of 10.10.0.0/16 for the main campus, and 10.11.0./16 for the branch campus.
+    - **LAN**: For the local area network (LAN), the IP address range of 172.16.0.0/16 for the main campus, and 172.17.0.0/16 for the branch campus.
     - **DMZ**: The Demilitarized Zone (DMZ) will be assigned IP addresses from the range 10.20.20.0/27.
     - **Public Addresses**: Public IP addresses from the range 105.100.50.0/30 for the main campus and 205.200.100.0/30 for the branch campus.
 

@@ -76,3 +76,9 @@ View ACLs
 - int g1/0/10
 - switchport access vlan [vlanNumber]
 
+## Setup STP & BPDU guard
+int range fa0/3-24 - access ports
+spanning-tree portfast
+spanning-tree bpduguard enable
+
+do wr

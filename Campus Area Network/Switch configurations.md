@@ -1,7 +1,7 @@
-# Types of modes
-1. User exec mode - default mode: Switch>
-2. Priviledged exec mode - enabled by 'en' command in user exec mode: Switch#
-3. Configuration mode - enabled by 'conf t' command in priviledged exec mode: Switch(config)
+# Types of CLI modes
+1. User exec mode - default mode:                                               Switch>
+2. Priviledged exec mode - enabled by 'en' command in user exec mode:           Switch#
+3. Configuration mode - enabled by 'conf t' command in priviledged exec mode:   Switch(config)
 
 # 1. USER EXEC MODE
 
@@ -23,7 +23,7 @@ conf t - configuration
 
         login - tell device to prompt for password
 
-        exec timeout [num] [number] - lock user out after num minutes and number seconds of inactivity
+        exec-timeout [num] [number] - lock user out after num minutes and number seconds of inactivity
 
 - banner motd #message#
 
@@ -61,5 +61,18 @@ View ACLs
 
 - access-class 2 in - limits incoming connections to rules in acl 2
 
-## 
+## Save configs
 - do wr - save running-config to startup-config
+
+## Setup VLANS
+- vlan 20
+- name Management
+
+## Setup Trunks
+- int range g1/0/2-6
+- switchport mode trunk
+
+## Setup access ports
+- int g1/0/10
+- switchport access vlan [vlanNumber]
+

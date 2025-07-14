@@ -82,3 +82,14 @@ spanning-tree portfast
 spanning-tree bpduguard enable
 
 do wr
+
+## Setup EtherChannel on Multilayer switches
+int range g1/0/21-23
+channel-group 1 mode active/passive
+exit
+
+int Port-channel 1
+switchport mode trunk
+do write
+
+##

@@ -92,4 +92,14 @@ int Port-channel 1
 switchport mode trunk
 do write
 
-##
+## Multilayer Switch configuration
+- ip routing
+- on desired port:
+    - no switchport
+    - assign ip addresses
+
+## Firewalls
+- consist of 3 kinda ports - dmz, inside net, outside network
+- for inside:
+    - nameif INSIDE0, 1, 2 etc
+    - security-level 100 (fully trust)

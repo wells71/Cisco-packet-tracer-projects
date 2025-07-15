@@ -103,3 +103,12 @@ do write
 - for inside:
     - nameif INSIDE0, 1, 2 etc
     - security-level 100 (fully trust)
+
+# HSRP & DHCP Helper (MLSW)
+- int vlan 10
+
+- ip addr 192.168.10.3 255.255.255.0
+- ip helper-address 10.20.20.5 (dhcp server)
+- ip helper-address 10.20.20.6
+- standby 10 ip 192.168.10.1
+

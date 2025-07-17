@@ -119,3 +119,17 @@ do write
     - network 192.168.10.0 0.0.0.255 area 0
     - network 172.16.0.0 0.0.255.255 area 0
     - network 10.10.0.0 0.0.255.255 area 0
+
+# firewall static routes to isp
+- route OUTSIDE 0.0.0.0 0.0.0.0 105.100.50.1
+
+# NAT
+create object networks. each obj net represents a subnet
+- object network INSIDE1-OUTSIDE (name it)
+- subnet 192.168.10.0 255.255.255.0 (define subnet)
+- nat (INSIDE1,OUTSIDE) dynamic interface (bind to NAT)
+
+now, assuming MLSW1 fails, we accomodate a route from the same 192.168.10.0 network:
+- object network INSIDE1a-OUTSIDE
+- subnet 192.168.10.0 255.255.255.0
+- nat (INSIDE2,OUTSIDE) dynamic interface

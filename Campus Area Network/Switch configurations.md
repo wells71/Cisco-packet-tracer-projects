@@ -133,3 +133,42 @@ now, assuming MLSW1 fails, we accomodate a route from the same 192.168.10.0 netw
 - object network INSIDE1a-OUTSIDE
 - subnet 192.168.10.0 255.255.255.0
 - nat (INSIDE2,OUTSIDE) dynamic interface
+
+# ipsec
+
+crypto ikev1 policy 10
+encryption 3des
+hash sha
+
+authentication pre-share
+
+group 2
+lifetime 86400
+exit
+
+tunnel-group 105.100.50.2 type ipsec-l2l
+tunnel-group 105.100.50.2 ipsec-attributes
+ikev1 pre-shared-key cisco
+
+crypto ipsec ikev1 transform-set TSET esp-3des esp-sha-hmac
+
+access-list VPN-ACL extended permit ip 172.17.0.0 255.255.0.0 192.168.10.0 255.255.255.0
+access-list VPN-ACL extended permit ip 10.11.0.0 255.255.0.0 192.168.10.0 255.255.255.0
+
+access-list VPN-ACL extended permit ip 172.17.0.0 255.255.0.0 172.16.0.0 255.255.0.0
+access-list VPN-ACL extended permit ip 10.11.0.0 255.255.0.0 172.16.0.0 255.255.0.0
+
+access-list VPN-ACL extended permit ip 172.17.0.0 255.255.0.0 10.10.0.0 255.255.0.0
+access-list VPN-ACL extended permit ip 10.11.0.0 255.255.0.0 10.10.0.0 255.255.0.0
+
+access-list VPN-ACL extended permit ip 172.17.0.0 255.255.0.0 10.20.20.0 255.255.255.224
+access-list VPN-ACL extended permit ip 10.11.0.0 255.255.0.0 10.20.20.0 255.255.255.224
+
+crypto map CMAP 10 set peer 105.100.50.2
+crypto map CMAP 10 set ikev1 transform-set TSET
+crypto map CMAP 10 match address VPN-ACL
+
+crypto map CMAP interface OUTSIDE
+crypto ikev1 enable OUTSIDE
+
+wr mem
